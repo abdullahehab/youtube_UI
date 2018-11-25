@@ -17,6 +17,15 @@ class _YoutubeMainState extends State<YoutubeMain> {
 
   @override
   Widget build(BuildContext context) {
+
+    List <Widget> _screens = [
+      Center(child: Text("home")),
+      Center(child: Text("Trending")),
+      Center(child: Text("Subscription")),
+      Center(child: Text("Inbox")),
+      Center(child: Text("Library")),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -34,6 +43,7 @@ class _YoutubeMainState extends State<YoutubeMain> {
           IconButton(icon: Icon(Icons.account_circle), onPressed: null),
         ],
       ),
+      body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onTapped,
